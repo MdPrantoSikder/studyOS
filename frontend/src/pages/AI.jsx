@@ -125,7 +125,49 @@ function AI() {
           </div>
         </div>
 
-      
+        {/* Quick Prompts */}
+        <div className="col-md-4">
+          <div style={{
+            backgroundColor: '#1a1d27',
+            border: '1px solid #2a2d3e',
+            borderRadius: '14px',
+            padding: '20px',
+          }}>
+            <h6 style={{ color: '#fff', marginBottom: '16px' }}>⚡ Quick Prompts</h6>
+            <div className="d-flex flex-column gap-2">
+              {quickPrompts.map((prompt) => (
+                <button
+                  key={prompt}
+                  onClick={() => sendMessage(prompt)}
+                  className="btn"
+                  style={{
+                    backgroundColor: '#0f1117',
+                    border: '1px solid #2a2d3e',
+                    color: '#ccc',
+                    borderRadius: '10px',
+                    padding: '10px 14px',
+                    textAlign: 'left',
+                    fontSize: '0.85rem',
+                    transition: 'all .2s',
+                  }}
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+
+            <div style={{
+              marginTop: '24px',
+              backgroundColor: '#0f1117',
+              borderRadius: '10px',
+              padding: '14px',
+            }}>
+              <div style={{ color: '#aaa', fontSize: '0.8rem', marginBottom: '8px' }}>AI Model</div>
+              <div style={{ color: '#7c6af7', fontWeight: '500', fontSize: '0.9rem' }}>Groq — Llama 3.1 70B</div>
+              <div style={{ color: '#666', fontSize: '0.75rem', marginTop: '4px' }}>14,400 requests/day free</div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
