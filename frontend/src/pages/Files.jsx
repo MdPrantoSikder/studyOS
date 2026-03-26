@@ -157,7 +157,30 @@ function Files() {
           </div>
         )}
 
-      
+        {/* PDF Viewer */}
+        {activeTab === 'pdf' && (
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '480px',
+            gap: '16px',
+          }}>
+            <div style={{ fontSize: '4rem' }}>📋</div>
+            <p style={{ color: '#aaa', fontSize: '0.95rem' }}>PDF Viewer</p>
+            <p style={{ color: '#666', fontSize: '0.82rem', textAlign: 'center', maxWidth: '300px' }}>
+              Upload a PDF to view it here. Full PDF viewer will be powered by Supabase Storage in Phase 6.
+            </p>
+            <button className="btn" style={{
+              backgroundColor: '#7c6af7', color: '#fff',
+              borderRadius: '10px', padding: '10px 24px',
+            }}>
+              Upload PDF
+            </button>
+          </div>
+        )}
+
       </div>
     </div>
   )
