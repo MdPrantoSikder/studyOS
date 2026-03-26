@@ -51,7 +51,36 @@ function Analytics() {
 
       <div className="row g-4">
 
-       
+        {/* Bar Chart — Study Hours */}
+        <div className="col-md-7">
+          <div style={{
+            backgroundColor: '#1a1d27',
+            border: '1px solid #2a2d3e',
+            borderRadius: '14px',
+            padding: '24px',
+          }}>
+            <h6 style={{ color: '#fff', marginBottom: '20px' }}>📊 Study Hours This Week</h6>
+            <div className="d-flex align-items-flex-end justify-content-between" style={{ height: '180px', gap: '8px' }}>
+              {weeklyHours.map((d) => (
+                <div key={d.day} className="d-flex flex-column align-items-center justify-content-end" style={{ flex: 1, height: '100%' }}>
+                  <div style={{ color: '#aaa', fontSize: '0.75rem', marginBottom: '6px' }}>{d.hours}h</div>
+                  <div style={{
+                    width: '100%',
+                    height: `${(d.hours / maxHours) * 100}%`,
+                    backgroundColor: '#7c6af7',
+                    borderRadius: '6px 6px 0 0',
+                    opacity: d.day === 'Sat' ? 1 : 0.6,
+                    transition: 'opacity .2s',
+                  }} />
+                  <div style={{ color: '#aaa', fontSize: '0.75rem', marginTop: '6px' }}>{d.day}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      
+
       </div>
     </div>
   )
