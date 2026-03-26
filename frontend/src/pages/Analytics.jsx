@@ -79,7 +79,35 @@ function Analytics() {
           </div>
         </div>
 
-      
+        {/* Subject Breakdown */}
+        <div className="col-md-5">
+          <div style={{
+            backgroundColor: '#1a1d27',
+            border: '1px solid #2a2d3e',
+            borderRadius: '14px',
+            padding: '24px',
+          }}>
+            <h6 style={{ color: '#fff', marginBottom: '20px' }}>📚 Subject Breakdown</h6>
+            <div className="d-flex flex-column gap-3">
+              {subjects.map((s) => (
+                <div key={s.name}>
+                  <div className="d-flex justify-content-between mb-1">
+                    <span style={{ color: '#ccc', fontSize: '0.85rem' }}>{s.name}</span>
+                    <span style={{ color: '#aaa', fontSize: '0.82rem' }}>{s.hours} hrs</span>
+                  </div>
+                  <div style={{ height: '6px', backgroundColor: '#2a2d3e', borderRadius: '3px' }}>
+                    <div style={{
+                      height: '100%',
+                      width: `${s.percent}%`,
+                      backgroundColor: s.color,
+                      borderRadius: '3px',
+                    }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
