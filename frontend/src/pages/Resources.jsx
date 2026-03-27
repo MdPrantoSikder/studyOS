@@ -64,7 +64,55 @@ function Resources() {
         ))}
       </div>
 
-    
+      {/* Resource Cards */}
+      <div className="row g-3">
+        {filtered.map((res) => (
+          <div className="col-md-4" key={res.id}>
+            <div style={{
+              backgroundColor: '#1a1d27',
+              border: '1px solid #2a2d3e',
+              borderRadius: '14px',
+              padding: '20px',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}>
+              {/* Top */}
+              <div>
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <span style={{
+                    backgroundColor: res.color + '22',
+                    color: res.color,
+                    fontSize: '0.75rem',
+                    fontWeight: 'bold',
+                    padding: '4px 10px',
+                    borderRadius: '20px',
+                  }}>
+                    {typeIcons[res.type]} {res.type}
+                  </span>
+                </div>
+                <h6 style={{ color: '#fff', fontWeight: 'bold', margin: '10px 0 6px' }}>{res.title}</h6>
+                <p style={{ color: '#aaa', fontSize: '0.82rem', lineHeight: '1.5' }}>{res.desc}</p>
+              </div>
+
+              {/* Bottom */}
+              <button
+                className="btn w-100 mt-3"
+                style={{
+                  backgroundColor: '#2a2d3e',
+                  color: '#ccc',
+                  borderRadius: '8px',
+                  fontSize: '0.85rem',
+                  border: 'none',
+                }}
+              >
+                Open →
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
